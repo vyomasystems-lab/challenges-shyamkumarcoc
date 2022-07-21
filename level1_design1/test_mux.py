@@ -17,6 +17,6 @@ for i in range (31):
     dut.b.value = inp13
    
 
-    cocotb._log.info(f'inp12={inp12:05} inp13={inp13:05} model={inp12!=inp13:05} DUT={int(dut.result.value):05}')
+    dut._log.info(f'inp12={inp12:05} inp13={inp13:05} model={inp12!=inp13:05} DUT={int(dut.result.value):05}')
     assert dut.result.value == inp12!=inp13, "Randomised test failed with: {inp12} + {inp13} = {result}".format(
             inp12=dut.a.value, inp13=dut.b.value, result=dut.sum.value)
